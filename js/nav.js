@@ -1,0 +1,36 @@
+$(function(){
+    var index=$('.slideBox').hasClass('slideBox'),
+        join_index=$('.join_index').hasClass('join_index'),
+        hot=$('.hot').hasClass('hot'),
+        about1=$('.about1').hasClass('about1'),
+        app=$('.app').hasClass('app'),
+        help=$('.help').hasClass('help');
+        if(index){
+            fun(0);
+        }
+        if(join_index){
+            fun(1);
+        }
+        if(hot){
+            fun(2);
+        }
+        if(about1){
+            fun(3);
+        }
+        if(app){
+            fun(4);
+        }
+        if(help){
+            fun(5);
+        }
+    function fun(n){
+        $('.header_menu>.header_r>ul>li').eq(n).addClass('fore_act').siblings().removeClass('fore_act');
+    }
+    $(window).scroll(function(){
+        if($(window).scrollTop()==0){
+            $('.header_menu').removeClass('heade_active');
+        }else{
+            $('.header_menu').addClass('heade_active');
+        }
+    });
+});
